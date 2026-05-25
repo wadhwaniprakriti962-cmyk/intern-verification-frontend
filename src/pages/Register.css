@@ -1,0 +1,79 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: black ;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.register-box {
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-box h2 {
+  text-align: center;
+}
+.register-box input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: black;
+}
+.register-box button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.register-box button:hover {
+  opacity: 0.9;
+}
+
+.register-box p {
+  text-align: center;
+  color: black;
+}
+.register-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.register-box h1,
+.register-box h2,
+.register-box label,
+.register-box p,
+.register-box a,
+.register-box form {
+  color: black;
+}
+.register-box form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: black ;
+  background-color: white ;
+  -webkit-text-fill-color: black ;
+}
+.register-box form input::placeholder {
+  color: gray;
+}

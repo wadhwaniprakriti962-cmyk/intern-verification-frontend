@@ -1,12 +1,41 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import api from "../api/axiosInstance";
 
 export default function Dashboard() {
-
+  const navigate = useNavigate();
   const [interns, setInterns] = useState([]);
   const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("token");
 
+  if (!token) {
+  return (
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "24px",
+        fontWeight: "bold",
+        color: "white",
+        background: "#0f172a"
+      }}
+    >
+      Only logged in users can access dashboard 🔒
+    </div>
+  );
+}
+
+
+  useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    window.location.href = "/login";
+  }
+}, []);
  
   useEffect(() => {
 

@@ -19,7 +19,7 @@ export default function Login() {
 
       console.log("LOGIN RESPONSE:", res.data);
 
-      // 🔥 SAVE TOKEN
+      // SAVE TOKEN
       localStorage.setItem("token", res.data.token);
 
       alert("Login successful");
@@ -27,9 +27,15 @@ export default function Login() {
       // redirect
       window.location.href = "/dashboard";
 
-    } catch (err) {
-      console.log(err.response?.data || err.message);
-    }
+    } 
+    catch (err) {
+  console.log(err);
+
+  const message =
+    err.response?.data?.message || "Invalid credentials";
+
+  alert(message);
+}
   };
 
  return (
@@ -55,6 +61,9 @@ export default function Login() {
       <button onClick={handleLogin}>
         Login
       </button>
+      <p>
+        Don't have an account? <a href="/register">Register</a>
+      </p>
 
     </div>
   </div>

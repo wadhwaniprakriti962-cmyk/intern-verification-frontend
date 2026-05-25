@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
+  const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "/login";
+};
   return (
     <nav style={styles.nav}>
 
@@ -16,6 +20,12 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <div style={styles.links}>
+        <button
+         onClick={handleLogout}
+        style={styles.logoutBtn}
+       >
+         Logout
+       </button>
 
         <NavLink
           to="/generate"
@@ -23,6 +33,7 @@ export default function Navbar() {
             isActive ? styles.activeBtn : styles.btn
           }
         >
+
           Generate
         </NavLink>
 
@@ -108,7 +119,15 @@ const styles = {
     border: "1px solid transparent",
     fontWeight: "500",
     transition: "0.3s ease"
-  },
+  },logoutBtn: {
+  padding: "10px 18px",
+  borderRadius: "10px",
+  border: "none",
+  cursor: "pointer",
+  backgroundColor: "#dc2626",
+  color: "white",
+  fontWeight: "600"
+},
 
   activeBtn: {
     padding: "10px 18px",
