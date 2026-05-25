@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./dashboard.css";
+import "./Dashboard.css";
 import api from "../api/axiosInstance";
 
 export default function Dashboard() {
